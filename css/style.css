@@ -1,0 +1,249 @@
+/*gerais*/
+::placeholder{
+    font-size: medium;
+    color: rgb(177, 177, 177);
+}
+
+*{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body, .container, .navbar{
+    width: 100%;
+}
+
+html, body, .container{
+    height: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(102, 102, 102);
+}
+
+/*barra*/
+
+
+.navbar, .navbar-nav{
+    display: flex;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 250px 100%;
+    grid-template-areas: 
+    "aside formulario";
+}
+
+.navbar{
+    background: black;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-nav{
+    align-items: center;
+}
+
+.navbar-nav li{
+    margin-left: 2rem;
+}
+
+.navbar-nav input{
+    box-sizing: border-box;
+    height: 2.2rem;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0 1rem;
+}
+
+.navbar-nav li:last-child{
+    margin-right: 0;
+}
+
+/*container da barra lateral e div dos inputs*/
+main{
+    height: calc(100% - 3.17rem);
+}
+
+/*Barra lateral*/
+aside{
+    background-color: rgb(218, 218, 218);
+    padding: 1.3rem 0;
+}
+
+aside li a{
+    color: rgb(63, 124, 204);
+    display: block;
+    line-height: 45px;
+    padding-left: 1.5rem;
+}
+aside li a:hover{
+    background-color: rgb(42, 42, 173);
+    color: white;
+}
+
+/*section dos forms*/
+
+.forms{
+    padding-top: 1.3rem;
+}
+
+.formulario{
+    padding: 1.3rem 3rem;
+    width: calc(100% - 250px);
+}
+
+.formulario h2{
+    font-size: 2rem;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    letter-spacing: 0.04rem;
+}
+
+/*form*/
+.forms div input, .forms div select{
+    width: 100%;
+}
+.forms{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1rem;
+    column-gap: 1.7rem;
+    grid-template-areas: 
+    "input-1 input-1 input-1 input-1 input-1 input-1 input-1 input-1 input-1 input-1 input-1 input-1"
+    "input-2 input-2 input-2 input-3 input-3 input-3 input-3 input-3 input-3 input-3 input-4 input-4"
+    "input-5 input-5 input-5 input-5 input-5 input-5 input-6 input-6 input-6 input-6 input-7 input-7";
+}
+.input-1{
+    grid-area: input-1;
+}
+.input-2{
+    grid-area: input-2;
+}
+.input-3{
+    grid-area: input-3;
+}
+.input-4{
+    grid-area: input-4;
+}
+.input-5{
+    grid-area: input-5;
+}
+.input-6{
+    grid-area: input-6;
+}
+.input-7{
+    grid-area: input-7;
+}
+
+/*formatação dos textos do form*/
+.text{
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+/*formatação do input do form*/
+.input{
+    padding-left: 0.7rem;
+    border: 1px solid rgb(200, 200, 200);
+    height: 2rem;
+    border-radius: 3px;
+}
+
+/*botoes*/
+.botoes{
+    display: flex;
+    margin-top: 0.7rem;
+    justify-content: flex-end;
+}
+.botoes button{
+    padding: 0.5rem 0.76rem;
+    border-radius: 3px;
+}
+.botao-1{
+    margin-right: 0.2rem;
+    background-color: rgba(0, 255, 34, 0.924);
+    color: white;
+    border: 1px solid green;
+}
+.botao-2{
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(177, 177, 177);
+}
+
+
+
+/*menu hamburguer*/
+
+#menuuu{
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#menuuu ul{
+    text-align: center;
+}
+#menuuu ul li{
+    margin-top: 2rem;
+}
+#menu-toggler{
+    z-index: 2;
+    color: white;
+    display: none;
+}
+
+
+/*Media queries*/
+@media (max-width: 360px){
+
+}
+@media (max-width: 550px){
+    .navbar-nav{
+        display: none;
+    }
+    #menu-toggler{
+        display: block;
+    }
+}
+@media (max-width: 950px){
+    aside{
+        display: none;
+    }
+    main, .formulario{
+        width: 100%;
+        height: 100%;
+    }
+    main{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "formulario";
+    }
+    .forms{
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(7, 1fr);
+        row-gap: 0.5rem;
+        column-gap: 0;
+        grid-template-areas: 
+        "input-1"
+        "input-2"
+        "input-3"
+        "input-4"
+        "input-5"
+        "input-6"
+        "input-7";
+    }
+}
